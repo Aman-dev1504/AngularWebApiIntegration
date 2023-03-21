@@ -1,0 +1,49 @@
+<h2>Products Table</h2>
+<!-- <ul>
+  <li *ngFor="let product of products">
+    {{ product.name }} - {{ product.price }}
+    <button (click)="deleteProduct(product.id)">Delete</button>
+  </li>
+</ul> -->
+
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Supplier</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.supplier }}</td>
+        <td>{{ product.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Products Form</h2>
+  <form #productForm="ngForm" (ngSubmit)="AddProduct(productForm)">
+    <!-- <label for="id">Enter Id</label><br>
+    <input type="number" name="id" id="id" ngModel required><br> -->
+    <label for="title">Enter name</label><br>
+  
+    <input type="text" name="name" id="name" ngModel required><br>
+    <label for="name">Enter description</label><br>
+   
+     <input type="text" name="description" id="description" ngModel
+      required><br>
+      <label for="name">Enter supplier</label><br>
+   
+      <input type="text" name="supplier" id="supplier" ngModel
+       required><br>
+       <label for="name">Enter price</label><br>
+   
+      <input type="number" name="price" id="price" ngModel
+       required><br>
+       <input type="submit" value="Add Posts"><br>
+  </form>
